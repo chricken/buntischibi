@@ -2,6 +2,7 @@
 
 // IMPORTS
 import dom from './dom.js';
+import components from './components.js';
 
 // VARIABLEN / KONSTANTEN
 const elements = {};
@@ -12,11 +13,10 @@ const domMapping = () => {
 }
 
 const renderStuff = () =>{
-    dom.create({
+    components.dummy({
         parent: elements.main,
-        content: 'Hallo Welt',
-        type: 'h3',
-    })
+        content: 'wh req pueqr eqrpeqüwrigüiowero geqiorgupiqepruighqioe'
+    });
 }
 
 const init = () => {
