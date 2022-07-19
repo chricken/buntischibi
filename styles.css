@@ -11,3 +11,10 @@
 .legend:after {
  content: ": ";
 }
+
+canvas {
+    position: relative;
+    display: block;
+    background: #fff;
+    border: 1px solid #888;
+}

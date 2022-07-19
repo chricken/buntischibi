@@ -9,6 +9,10 @@ const calc = {
         value = Math.min(value, max);
         value = Math.max(value, min);
         return value;
+    },
+
+    createNumber(min, max) {
+        return ~~(Math.random() * (max - min + 1) + min);
     }
 }
 

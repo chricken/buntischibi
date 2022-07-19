@@ -2,8 +2,9 @@
 
 import dom from './dom.js';
 import calc from './calc.js';
+import canvas from './canvas.js';
 
-const compontents = {
+const components = {
     glider({
         parent = false,
         min = 0,
@@ -17,7 +18,7 @@ const compontents = {
             classes: ['container', 'containerGlider'],
             parent
         })
-        
+
         // Beschriftung
         if (legend) {
             dom.create({
@@ -68,7 +69,45 @@ const compontents = {
         return range;
 
 
+    },
+
+    bunti({
+        parent = false
+    } = {}) {
+        const container = dom.create({
+            parent,
+            classes: ['container', 'containerBunti']
+        })
+
+        const spielfeld = dom.create({
+            type:'canvas',
+            parent: container,
+            attr:{
+                width: 600,
+                height: 400
+            }
+        })
+
+        const rngDummy = components.glider({
+            parent: container,
+            legend: 'Anzahl der Kreise',
+            min: 10,
+            max: 500,
+            value: 100,
+            callback() {
+                canvas.renderBunti({
+                    c: spielfeld,
+                    numKreise:rngDummy.value
+                })
+            }
+        })
+
+        canvas.renderBunti({
+            c: spielfeld,
+            numKreise:rngDummy.value
+        })
+
     }
 }
 
-export default compontents;
+export default components;

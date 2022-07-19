@@ -12,13 +12,15 @@ const domMapping = () => {
     elements.main = dom.$('main');
 }
 
-const renderStuff = () =>{
-    const rngDummy = components.glider({
+const renderStuff = () => {
+    components.bunti({
         parent: elements.main,
-        legend: 'Dummy',
-        callback(){
-            console.log( rngDummy.value );
-        }
+    })
+    components.bunti({
+        parent: elements.main,
+    })
+    components.bunti({
+        parent: elements.main,
     })
 }
 
