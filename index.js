@@ -13,10 +13,13 @@ const domMapping = () => {
 }
 
 const renderStuff = () =>{
-    components.dummy({
+    const rngDummy = components.glider({
         parent: elements.main,
-        content: 'wh req pueqr eqrpeqüwrigüiowero geqiorgupiqepruighqioe'
-    });
+        legend: 'Dummy',
+        callback(){
+            console.log( rngDummy.value );
+        }
+    })
 }
 
 const init = () => {
